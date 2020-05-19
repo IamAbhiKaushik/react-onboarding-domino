@@ -1,16 +1,10 @@
 import React from 'react';
 import './../App.css';
-import BlueButton from './BlueButton'
 import {Button, Modal, Input} from 'antd';
 import { PlusOutlined, PlusSquareTwoTone } from '@ant-design/icons';
 import styled from 'styled-components';
-
-
 const { TextArea } = Input;
 
-const styledDiv = styled.div`
-    font-size: 24px;
-`;
 
 interface Props {
   onClick: any;

@@ -1,6 +1,5 @@
 import React from 'react';
-import Checkbox from './Checkbox'
-import {Button, Table, Input} from 'antd';
+import {Table} from 'antd';
 import { CheckCircleFilled} from '@ant-design/icons';
 
 interface Props {
@@ -12,7 +11,8 @@ class ToDo extends React.Component<Props, any> {
 
     constructor (props: Props) {
       super(props);
-      this.state = { data: props.data, selectedRowKeys: [], loading: false,};
+      this.state = { data: props.data, selectedRowKeys: []};
+      console.log(props)
     };
     moveToDone = () => {
         const {selectedRowKeys} = this.state
@@ -57,7 +57,7 @@ class ToDo extends React.Component<Props, any> {
           return {key: index, index: index+1, task: entry};
         });
         const columns = this.getCol();
-        const { loading, selectedRowKeys } = this.state;
+        const { selectedRowKeys } = this.state;
         const rowSelection = {
           selectedRowKeys,
           onChange: this.onSelectChange,

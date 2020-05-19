@@ -3,14 +3,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 import "antd/dist/antd.css";
 
 import {Tabs, Badge} from 'antd';
 
-import logo from './logo.svg';
+
 import './App.css';
 import Header from './component/Header'
 import {AddTask} from './component/addTask'
@@ -20,13 +19,8 @@ import getLS from './common'
 import styled from 'styled-components';
 
 const R = require('ramda');
-const SweetAlert = require('react-bootstrap-sweetalert');
 const TabPane = Tabs.TabPane;
 
-const styaledTab = styled.div`
-    padding-left: 20px;
-    padding-right: 20px;
-`;
 interface DefaultStates{
   toDos: Array<String>;
   Done: Array<String>;
@@ -88,6 +82,7 @@ class App extends React.Component<any, DefaultStates> {
 
   render() {
   const {toDos, Done} = this.state;
+  console.log(this.state)
   const addTaskButton = <AddTask onClick={this.addTaskToData}/>
   const ToDoToken = <div>TODO <Badge count={toDos.length} style={{ backgroundColor: '#1890ff' }}/> </div>
   const DoneToken = <div>DONE <Badge count={Done.length} style={{ backgroundColor: '#1890ff' }}/> </div>
