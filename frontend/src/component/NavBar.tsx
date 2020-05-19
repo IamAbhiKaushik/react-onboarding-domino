@@ -1,7 +1,6 @@
 import React from 'react';
 import './../App.css';
-import BlueButton from './BlueButton'
-
+import {Link} from "react-router-dom";
 
 class NavBar extends React.Component {
   render() {
@@ -9,15 +8,13 @@ class NavBar extends React.Component {
       <div className="navbar">
         <div className="navbar-left">
             <div>
-                <div>TODO</div>
+                <Link to="/todo">TODO</Link>
             </div>
             <div>
-                <div>DONE</div>
+                <Link to="/done">DONE</Link>
             </div>
         </div>
-        <div className="navbar-right">
-            <BlueButton value= "+ New Task" />
-        </div>
+
       </div>
     );
   }

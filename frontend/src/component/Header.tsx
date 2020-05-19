@@ -1,8 +1,8 @@
 import React from 'react';
 import './../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faRing } from '@fortawesome/free-solid-svg-icons'
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+import { faRing, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+
 
 class Header extends React.Component {
   render() {
