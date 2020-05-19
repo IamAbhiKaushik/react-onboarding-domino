@@ -2,7 +2,6 @@ import React from 'react';
 import './../App.css';
 import {Button, Modal, Input} from 'antd';
 import { PlusOutlined, PlusSquareTwoTone } from '@ant-design/icons';
-import styled from 'styled-components';
 const { TextArea } = Input;
 
 
@@ -18,7 +17,6 @@ export class AddTask extends React.Component<any, any> {
     }
 
     textChange = (e:any) => {
-      // console.log(e);
       this.setState ({
         response: e.target.value
       })
@@ -66,7 +64,6 @@ export class AddTask extends React.Component<any, any> {
               Add
             </Button>,
           ]}
-
         >
           <p>Task</p>
           <TextArea rows={4} placeholder="Place holder Text" onChange={this.textChange} value={this.state.response}/>

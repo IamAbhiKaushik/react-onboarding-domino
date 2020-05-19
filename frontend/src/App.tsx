@@ -4,19 +4,14 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-
 import "antd/dist/antd.css";
-
 import {Tabs, Badge} from 'antd';
-
-
 import './App.css';
 import Header from './component/Header'
 import {AddTask} from './component/addTask'
 import ToDo from './component/ToDo'
 import DoneData from './component/Done'
 import getLS from './common'
-import styled from 'styled-components';
 
 const R = require('ramda');
 const TabPane = Tabs.TabPane;
@@ -72,17 +67,13 @@ class App extends React.Component<any, DefaultStates> {
    const {toDos, Done} = this.state;
    const values = R.map( (i: number) => Done[i], ids)
    this.setState({
-      toDos: R.concat(this.state.toDos, values),
+      toDos: R.concat(toDos, values),
       Done: R.filter((d: any) => !values.includes(d), Done)
     },this.updateLS);
    };
 
-
-
-
   render() {
   const {toDos, Done} = this.state;
-  console.log(this.state)
   const addTaskButton = <AddTask onClick={this.addTaskToData}/>
   const ToDoToken = <div>TODO <Badge count={toDos.length} style={{ backgroundColor: '#1890ff' }}/> </div>
   const DoneToken = <div>DONE <Badge count={Done.length} style={{ backgroundColor: '#1890ff' }}/> </div>

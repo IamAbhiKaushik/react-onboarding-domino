@@ -12,8 +12,8 @@ class ToDo extends React.Component<Props, any> {
     constructor (props: Props) {
       super(props);
       this.state = { data: props.data, selectedRowKeys: []};
-      console.log(props)
     };
+
     moveToDone = () => {
         const {selectedRowKeys} = this.state
         this.props.onClick(selectedRowKeys)
